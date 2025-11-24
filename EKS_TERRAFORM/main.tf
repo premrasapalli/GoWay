@@ -16,8 +16,8 @@ module "eks" {
   cluster_name    = "goway-cluster"
   cluster_version = "1.29"
 
-  vpc_id  = "vpc-xxxx"
-  subnets = ["subnet-xxx", "subnet-yyy"]
+  vpc_id  = "vpc-0ff1c7e5718ff6275"
+  subnets = "subnet-0e483afedc2e4ca19"
 
   node_groups = {
     goway_nodes = {
