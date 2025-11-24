@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goway-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: goway
+  template:
+    metadata:
+      labels:
+        app: goway
+    spec:
+      containers:
+        - name: goway
+          image: <your-dockerhub>/goway:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NODE_ENV
+              value: "production"
+
