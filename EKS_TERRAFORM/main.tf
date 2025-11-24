@@ -8,10 +8,6 @@ terraform {
   required_version = ">= 1.2.0"
 }
 
-provider "aws" {
-  region = var.aws_region
-}
-
 variable "aws_region" {
   default = "us-east-1"
 }
@@ -20,8 +16,10 @@ module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "goway-cluster"
   cluster_version = "1.29"
-  subnets         = ["subnet-xxx","subnet-yyy"] # replace with real subnets
-  vpc_id          = "vpc-xxxx"                   # replace with real VPC
+
+  vpc_id  = "vpc-xxxx"
+  subnets = ["subnet-xxx", "subnet-yyy"]
+
   node_groups = {
     goway_nodes = {
       desired_capacity = 2
