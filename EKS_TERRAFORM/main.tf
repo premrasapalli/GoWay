@@ -5,22 +5,18 @@ terraform {
       version = "~> 5.0"
     }
   }
-
   required_version = ">= 1.2.0"
 }
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "20.31.0"
+  version = "19.21.0"
 
   cluster_name    = "goway-cluster"
   cluster_version = "1.29"
 
-  vpc_id  = "vpc-02a73c94354f271c8"        # FIXED
-  subnets = [
-    "subnet-0fdcd74e653ed3971",            # FIXED
-    "subnet-0a41b261e1bd12593"             # You MUST provide 2 subnets minimum
-  ]
+  vpc_id  = "vpc-02a73c94354f271c8"
+  subnets = "subnet-0fdcd74e653ed3971", "subnet-0a41b261e1bd12593"
 
   node_groups = {
     goway_nodes = {
