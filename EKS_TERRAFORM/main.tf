@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 6.20.0"
+      version = "~> 5.0"
     }
   }
   required_version = ">= 1.2.0"
@@ -10,7 +10,8 @@ terraform {
 
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
-  version         = "22.0.0" # <-- explicitly set a stable new version
+  version         = "~> 21.0"   # latest stable
+
   cluster_name    = "goway-cluster"
   cluster_version = "1.29"
 
