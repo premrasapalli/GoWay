@@ -1,13 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-  required_version = ">= 1.2.0"
-}
-
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "goway-cluster"
