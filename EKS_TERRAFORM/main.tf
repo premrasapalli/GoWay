@@ -8,11 +8,6 @@ terraform {
   required_version = ">= 1.2.0"
 }
 
-variable "aws_region" {
-  description = "AWS region for the EKS cluster"
-  default     = "us-east-1"
-}
-
 module "eks" {
   source          = "terraform-aws-modules/eks/aws"
   cluster_name    = "goway-cluster"
