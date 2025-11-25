@@ -11,13 +11,4 @@ module "eks" {
     "subnet-0fdcd74e653ed3971",
     "subnet-0a41b261e1bd12593"
   ]
-
-  eks_managed_node_groups = {
-    goway_nodes = {
-      desired_size = 2
-      max_size     = 3
-      min_size     = 1
-      instance_types = ["t3.medium"]
-    }
-  }
 }
